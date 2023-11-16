@@ -1,10 +1,8 @@
 import { MongoClient, ServerApiVersion} from "mongodb";
-const connectionString = 'mongodb+srv://Cluster43977:X2x+Y3l2YHFF@cluster43977.hnjz2p8.mongodb.net/?retryWrites=true&w=majority'
+import dotenv from 'dotenv'
 
-// const messages = [
-//     {userName: 'system', message: 'welcome to simple chat from mongo!'}
-// ]
-const client = new MongoClient(connectionString);
+dotenv.config()
+const client = new MongoClient(process.env.connectionString);
 
 async function getMessageCollection(){
     await client.connect()
