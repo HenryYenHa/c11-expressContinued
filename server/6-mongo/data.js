@@ -1,6 +1,6 @@
 import { MongoClient} from "mongodb";
 
-var connectionString = 'mongodb+srv://Cluster43977:Chris123@cluster43977.hnjz2p8.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = "mongodb+srv://Cluster43977:Chris123@cluster43977.hnjz2p8.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(connectionString);
 
 async function getMessageCollection(){
@@ -12,7 +12,8 @@ async function getMessageCollection(){
 
 export async function getMessages(){
     var messageCollection = await getMessageCollection()
-    var allTheMessages = await messageCollection.find().toArray();
+    // var allTheMessages = await messageCollection.find({userName: 'Chris'}).toArray();
+    var allTheMessages = await messageCollection.find({userName: 'Chris'}).toArray();
     return allTheMessages;
 }
 
