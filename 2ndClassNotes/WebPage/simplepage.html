@@ -1,0 +1,12 @@
+<script src="./script.js"></script>
+
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+    <h1>Messages</h1>
+    <input id="userName" type="Text" placeholder="Your name"/>
+    <button onClick="loadData()">Refresh</button>
+</div>
+
+<div id="messages" style="border: 2px solid red; border-radius: 2px; min-height: 150px; font-size: 18px; padding: 5px;" ></div>
+
+<input type="text" id="newMessage" style="font-size: 18px; margin: 10px; width: 85%; padding: 5px" />
+<button onClick="sendMessage()">Send</button>
