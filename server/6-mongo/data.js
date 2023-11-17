@@ -1,8 +1,7 @@
-import { MongoClient, ServerApiVersion} from "mongodb";
-import dotenv from 'dotenv'
+import { MongoClient} from "mongodb";
 
-dotenv.config()
-const client = new MongoClient(process.env.connectionString);
+var connectionString = 'mongodb+srv://Cluster43977:Chris123@cluster43977.hnjz2p8.mongodb.net/?retryWrites=true&w=majority'
+const client = new MongoClient(connectionString);
 
 async function getMessageCollection(){
     await client.connect()
@@ -13,9 +12,7 @@ async function getMessageCollection(){
 
 export async function getMessages(){
     var messageCollection = await getMessageCollection()
-    console.log('messageCollection', messageCollection)
     var allTheMessages = await messageCollection.find().toArray();
-    console.log('messages', allTheMessages)
     return allTheMessages;
 }
 
