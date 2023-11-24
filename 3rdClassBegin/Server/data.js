@@ -1,9 +1,6 @@
 import {MongoClient} from 'mongodb'
-import dotenv from 'dotenv'
 
-dotenv.config()
-const uri = process.env.messageMongoUri
-console.log('uri', uri)
+const uri="mongodb+srv://Cluster43977:Chris123@cluster43977.hnjz2p8.mongodb.net/?retryWrites=true&w=majority"
 
 let client = new MongoClient(uri)
 
